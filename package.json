@@ -1,0 +1,35 @@
+{
+  "name": "@lakca/superagent-toolkit",
+  "version": "0.1.0",
+  "description": "superagent plugin, providing frequently used tools, like reporting message of current request, directly retrieving specific property of response, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lakca/superagent-toolkit.git"
+  },
+  "keywords": [
+    "superagent",
+    "plugin",
+    "toolkit",
+    "report"
+  ],
+  "author": "lakca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lakca/superagent-toolkit/issues"
+  },
+  "homepage": "https://github.com/lakca/superagent-toolkit#readme",
+  "peerDependencies": {
+    "superagent": ">=1.0.0"
+  },
+  "dependencies": {
+    "superagent-jsonp": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/superagent": "^4.1.8",
+    "superagent": ">=1.0.0"
+  }
+}
