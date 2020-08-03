@@ -1,6 +1,6 @@
 # superagent-toolkit
 
-> [Superagent](superagent) plugin, providing frequently used tools, like reporting message of current request, directly retrieving specific property of response, etc.
+> [Superagent][superagent] plugin, providing frequently used tools, like reporting message of current request, directly retrieving specific property of response, etc.
 
 ## Usage
 
@@ -80,7 +80,7 @@ Response property expected to be returned instead of the whole response object.
 
 ### `options.swallowError` {boolean=false}
 
-Silence error, no request/response error will be thrown since [superagent](superagent) does that by default.
+Silence error, no request/response error will be thrown since [superagent][superagent] does that by default.
 
 **Note**: this is useful when we handle request status by general handler `config.report`, then focusing on handling business data in dealing with your business logic.
 
@@ -90,7 +90,7 @@ log to console.
 
 ### `options.jsonp` {object}
 
-Read more in [superagent-jsonp](jsonp)
+Read more in [superagent-jsonp][jsonp]
 
 ### `options.jsonp.callbackParam` {string=callback}
 
@@ -102,5 +102,5 @@ Read more in [superagent-jsonp](jsonp)
 
 MIT
 
-[superagent]:(https://github.com/visionmedia/superagent)
-[jsonp]:(https://github.com/lamp/superagent-jsonp)
+[superagent]: https://github.com/visionmedia/superagent
+[jsonp]: https://github.com/lamp/superagent-jsonp
