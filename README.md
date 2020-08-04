@@ -62,7 +62,7 @@ Dealing with `401` http code. If value is:
 - `string[]`, redirect using ths first not nullable(`!= null`) property retrieving via the array element one by one, such as `['body.location']`;
 - `function`, redirect using returned value if which is not void, **so you can provide your own redirection in the function without returning value.**
 
-### `options.messageProperty` {string}
+### `options.messageProperty` {string=res.statusMessage}
 
 Report message property.
 
@@ -88,13 +88,17 @@ Silence error, no request/response error will be thrown since [superagent][super
 
 log to console.
 
+### `options.prefix` {string}
+
+### `options.suffix` {string}
+
 ### `options.jsonp` {object}
 
 Read more in [superagent-jsonp][jsonp]
 
 ### `options.jsonp.callbackParam` {string=callback}
 
-### `options.jsonp.callbackName` {object}
+### `options.jsonp.callbackName` {string}
 
 ### `options.jsonp.timeout` {number=1000}
 
