@@ -4,7 +4,7 @@
   "description": "superagent plugin, providing frequently used tools, like reporting message of current request, directly retrieving specific property of response, etc.",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test.js"
+    "test": "istanbul cover mocha -- --require should --reporter spec --bail --check-leaks --globals window,console test/ --exit"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,16 @@
   },
   "devDependencies": {
     "@types/superagent": "^4.1.8",
+    "express": "^4.17.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^8.1.1",
+    "should": "^13.2.3",
     "superagent": ">=1.0.0"
-  }
+  },
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md",
+    "History.md"
+  ]
 }
