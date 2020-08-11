@@ -97,8 +97,10 @@ function getSubProperty(debug, obj, description, defaultValue) {
   let value
   try {
     value = eval(`obj.${description}`)
+    /* istanbul ignore if */
     if (value === undefined) value = defaultValue
   } catch (e) {
+    /* istanbul ignore if */
     if (debug) console.error(e)
     value = defaultValue
   }
@@ -122,9 +124,10 @@ function returnNonNullable(arr, fn) {
 }
 
 /**
- * @param {config} config
+ * @param {config} [config]
  */
 module.exports = function(config) {
+  config = config || {}
   return plugin
   /**
    * @type {import('superagent').Plugin}
@@ -143,10 +146,9 @@ module.exports = function(config) {
         if (cfg.suffix) this.url = this.url + cfg.suffix
       }
       // use plugin before sent
-      if (cfg.jsonp) {
-        this.use(jsonp(cfg.jsonp))
+      if (cfg.jsonp && typeof window !== 'undefined') {
         // jsonp will replace end function.
-        originalEnd = request.end
+        originalEnd = jsonp(cfg.jsonp)({}).end
       }
 
       originalEnd.call(this, function callback(
@@ -155,7 +157,7 @@ module.exports = function(config) {
         // [response](http://visionmedia.github.io/superagent/#response-properties)
         if (response) {
           // handle 401
-          if (response.status === 401 && cfg.unauthorized) {
+          if (response.status === 401 && cfg.unauthorized && typeof window !== 'undefined') {
             if (cfg.unauthorized === true) {
               window.location.reload()
             } else if (typeof cfg.unauthorized === 'string') {
