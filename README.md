@@ -2,6 +2,9 @@
 
 > [Superagent][superagent] plugin, providing frequently used tools, like reporting message of current request, directly retrieving specific property of response, etc.
 
+[![Build Status](https://travis-ci.org/lakca/superagent-toolkit.svg?branch=master)](https://travis-ci.org/lakca/superagent-toolkit)
+[![codecov](https://codecov.io/gh/lakca/superagent-toolkit/branch/master/graph/badge.svg)](https://codecov.io/gh/lakca/superagent-toolkit)
+
 ## Usage
 
 ### Agent
